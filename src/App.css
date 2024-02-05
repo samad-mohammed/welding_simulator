@@ -1,0 +1,364 @@
+.App {
+  text-align: center;
+  background-color: #bcc2c5f8;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-with-shadow {
+  position: relative;
+  z-index: 1;
+}
+
+.image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: -1;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+h1 {
+  color: #030060;
+  text-decoration: underline;
+  text-decoration-color: rgb(125, 125, 125);
+}
+h3{
+  color: #F7C331;
+  text-decoration: underline;
+  text-decoration-color: #f0f0f0;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  z-index: 2;
+  padding: 20px;
+}
+p,label{
+  color:black
+}
+.hoverStyle {
+  position: relative;
+  color: #000000;
+  transition: color 0.3s ease, filter 0.3s ease;
+  padding: 10px;
+  margin: 10px;
+}
+
+.hoverStyle::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #ffec44;
+  transition: width 0.3s ease;
+}
+
+/* Added styles for active and focused states */
+.hoverStyle:hover,
+.hoverStyle:focus,
+.hoverStyle:active {
+  color: #144b00 !important;
+  filter: blur(0);
+  font-weight: bold;
+}
+
+.hoverStyle:hover::before,
+.hoverStyle:focus::before,
+.hoverStyle:active::before {
+  width: 100%;
+}
+
+/* Blur effect on other links when hovering on one link */
+.nav-item:hover .nav-link:not(.hoverStyle) {
+  filter: blur(2px);
+}
+
+.navbar-nav .nav-item {
+  width: 120px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-item + .nav-item {
+  margin-left: 1px;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#theme-icon {
+  margin-left: 50px;
+}
+
+#logout-btn {
+  color: #dc3636;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  /* text-shadow: 2px 1px 4px rgba(233, 233, 233, 0.571); */
+}
+
+#logout-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #f75555;
+  z-index: -1;
+  transition: left 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+#logout-btn:hover::before,
+#logout-btn:focus::before,
+#logout-btn:active::before {
+  left: 0;
+}
+
+#logout-btn:hover,
+#logout-btn:focus,
+#logout-btn:active {
+  color: #fffffffe !important;
+  text-shadow: none;
+}
+
+td:last-child {
+  /* background-color: #5696c7; */
+  width: 100px; /* set width of last column to 60% */
+}
+.card{
+  transition: transform 0.3s ease;
+  /* width:300px; */
+  /* height:200px; */
+}
+.card-body{
+  padding:0;
+
+}
+.card-header, .card-footer{
+  background-color: #3c424b;
+}
+
+.card:hover .card-header,
+.card:hover .card-footer {
+  background-color: #22252a;
+}
+.card:hover .card-body {
+  background-color: #e7f7ff;
+}
+.card:hover{
+  transform: translateY(-5px); /* Move the card 5 pixels up on hover */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.formbox{
+  background:#124400;
+  width: 500px;
+  /* height: 500px; */
+    border-radius: 15px;
+     box-shadow: 0 0 10px rgba(255, 255, 255, 0.307);
+     padding-bottom: 40px;
+}
+
+.footer {
+    background:#232a34;
+	padding-bottom: 20px;
+	padding-top: 30px;
+  margin-top: 100px;
+}
+.footer_menu {
+	margin-bottom: 20px;
+}
+.footer_menu ul {
+	list-style: none;
+	text-align: center;
+}
+.footer_menu ul li{display: inline-block;}
+.footer_menu ul li a {
+	color:#fff;
+	padding: 0 10px;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+}
+.footer_menu ul li a:hover{color:#554c86;}
+
+/*START FOOTER SOCIAL DESIGN*/
+.footer_profile{margin-bottom:40px;}
+.footer_profile ul{
+list-style: outside none none;
+margin: 0;
+padding: 0
+}
+.footer_profile ul li{
+display: inline-block;
+}
+@media only screen and (max-width:480px) { 
+.footer_profile ul li{margin:2px;}
+}
+.footer_profile ul li a img{width:60px;}
+
+.footer_profile ul li a {
+	background: #554c86;
+	width: 40px;
+	height: 40px;
+	display: block;
+	text-align: center;
+	margin-right: 5px;
+	border-radius: 50%;
+	line-height: 40px;
+	box-sizing: border-box;
+	text-decoration: none;
+	-webkit-transition: .3s;
+	transition: .3s;
+	color: #fff;
+}
+.footer_copyright {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* YourComponent.css */
+
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Adjust height as needed */
+  overflow: hidden;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the video covers the entire container */
+  /* opacity: 0.5; Adjust the opacity as needed */
+}
+
+.blue-box {
+  background-color: rgba(63, 63, 69, 0.81);
+  padding: 20px;
+  border-radius: 10px; 
+  padding-right: 0px;
+  padding-left: 80px;
+  /* margin-right: 0px; */
+}
+
+/* Basic table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: rgb(172, 172, 172);
+
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center; /* Center the content */
+  vertical-align: middle;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+/* Hover effect for table rows */
+tr:hover {
+  background-color: #5b5b5b;
+  color: white;
+}
+
+/* Add some spacing between cells */
+td, th {
+  padding: 12px;
+}
+
+/* Responsive table styles */
+@media screen and (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  th {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    margin-bottom: 15px;
+  }
+
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    /* padding-top: 50%; */
+
+  }
+
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    content: attr(data-label);
+  }
+}
+
